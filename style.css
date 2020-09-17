@@ -1,0 +1,34 @@
+/*
+Theme Name: Restaurant
+Theme URI: https://github.com/shohelrrrana
+Author: Shohel Rana
+Author URI: https://github.com/shohelrrrana
+Version: 1.0.0
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: restaurant
+Tags: custom-background, custom-logo, custom-menu, featured-images
+*/
+
+img {
+    max-width: 100%;
+}
+
+p {
+    color: #777 ;
+    line-height: 26px ;
+    margin: 0 0 20px;
+}
+
+a {
+    color: #0099E6;
+    text-decoration: none !important;
+}
+
+.btn-xs {
+    font-size: 11.2px;
+    font-size: 0.7rem;
+    padding: 3.2px 8px;
+    padding: 0.2rem 0.5rem;
+}
