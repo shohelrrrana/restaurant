@@ -39,10 +39,17 @@ class Customizer {
     public function load_sections() {
         //Theme option sections
         \Theme\Customizer\Sections\Theme_Options\Typography::get_instance();
+        \Theme\Customizer\Sections\Theme_Options\Header_Top::get_instance();
+        \Theme\Customizer\Sections\Theme_Options\Footer::get_instance();
 
         //Front page sections
         \Theme\Customizer\Sections\Front_Page\Sortable::get_instance();
-        \Theme\Customizer\Sections\Front_Page\Hero::get_instance();
+        \Theme\Customizer\Sections\Front_Page\Hero_Slider::get_instance();
+        \Theme\Customizer\Sections\Front_Page\Enjoy_Meal::get_instance();
+        \Theme\Customizer\Sections\Front_Page\Testimonial::get_instance();
+        \Theme\Customizer\Sections\Front_Page\Gallery::get_instance();
+        \Theme\Customizer\Sections\Front_Page\Blog_Team::get_instance();
+        \Theme\Customizer\Sections\Front_Page\Speacial_Menu::get_instance();
     }
 
 }

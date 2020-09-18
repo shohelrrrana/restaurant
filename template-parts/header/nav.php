@@ -5,61 +5,67 @@
      * @package restaurant
      */
 
-$menu_class = Theme\Setup\Menus::get_instance();
-$primary_menu_items = wp_get_nav_menu_items( 'primary-menu' );
+    $menu_class         = Theme\Setup\Menus::get_instance();
+    $primary_menu_items = wp_get_nav_menu_items( 'primary-menu' );
 ?>
 <!--header start-->
-<header class="app-header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <?php
-                if ( has_custom_logo() ) {
-                    the_custom_logo();
-                } else {
-                ?>
-                    <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                    <?php echo get_bloginfo( 'blogname' ); ?>
-                </a>
-                <?php
-                    }
-                ?>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul id="menu" class="navbar-nav ml-auto">
-                    <?php if ( is_array( $primary_menu_items ) && !empty( $primary_menu_items ) ): ?>
-                        <?php
-                            foreach ( $primary_menu_items as $menu_item ):
-                                $child_menu_items = $menu_class->get_child_menu_items( $primary_menu_items, $menu_item->ID );
-                            ?>
-                            <?php if ( empty( $child_menu_items ) && intval( $menu_item->menu_item_parent ) === 0 ): ?>
-                                <li class="nav-item">
-                                    <a href="<?php echo esc_url( $menu_item->url ); ?>" class="nav-link" >
-                                        <?php echo esc_html( $menu_item->title ); ?>
-                                    </a>
-                                </li>
-                            <?php endif?>
-                            <?php if ( !empty( $child_menu_items ) ): ?>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="<?php echo esc_url( $menu_item->url ); ?>"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <?php echo esc_html( $menu_item->title ); ?>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <?php foreach ( $child_menu_items as $child_menu_item ): ?>
-                                            <li class="nav-item">
-                                                <a href="<?php echo esc_url( $child_menu_item->url ); ?>" class="nav-link">
-                                                    <?php echo esc_html( $child_menu_item->title ); ?>
-                                                </a>
-                                            </li>
-                                        <?php endforeach;?>
+<header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 70}">
+    <div class="header-body border-top-0">
+
+        <?php get_template_part('template-parts/header/header-top'); ?>
+
+        <div class="header-container container">
+            <div class="header-row">
+                <div class="header-column">
+                    <div class="header-row">
+                        <div class="header-logo">
+                            <a href="index.html">
+                                <img alt="Porto" width="116" height="50" data-sticky-width="82" data-sticky-height="36" src="https://portotheme.com/html/porto/8.0.0/img/demos/restaurant/logo-restaurant.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-column justify-content-end">
+                    <div class="header-row">
+                        <div class="header-nav order-2 order-lg-1">
+                            <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1">
+                                <nav class="collapse">
+                                    <ul class="nav nav-pills" id="mainNav">
+                                        <li>
+                                            <a class="nav-link active" href="demo-restaurant.html">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="demo-restaurant-menu.html">
+                                                Menu
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="demo-restaurant-about.html">
+                                                About
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="demo-restaurant-press.html">
+                                                Press
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="demo-restaurant-contact.html">
+                                                Contact
+                                            </a>
+                                        </li>
                                     </ul>
-                                </li>
-                            <?php endif;?>
-                        <?php endforeach;?>
-                    <?php endif;?>
-                </ul>
+                                </nav>
+                            </div>
+                            <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
 </header>

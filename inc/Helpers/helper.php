@@ -4,7 +4,7 @@
 define( 'THEME_PATH', get_template_directory() );
 define( 'THEME_URI', get_template_directory_uri() );
 
-if ( get_site_url() == 'http://wpdemo.test' ) {
+if ( get_site_url() == 'http://restaurant.test' ) {
     define( 'THEME_VERSION', time() );
 } else {
     define( 'THEME_VERSION', wp_get_theme()->get( 'Version' ) );
