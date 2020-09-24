@@ -16,8 +16,8 @@ img {
 }
 
 p {
-    color: #777 ;
-    line-height: 26px ;
+    color: #777;
+    line-height: 26px;
     margin: 0 0 20px;
 }
 
@@ -31,4 +31,21 @@ a {
     font-size: 0.7rem;
     padding: 3.2px 8px;
     padding: 0.2rem 0.5rem;
+}
+
+.about #hero .section_title p {
+    color: #fff;
+}
+
+.about #hero .section_description p {
+    z-index: 99;
+    color: #fff !important;
+}
+
+.tparrows.tp-leftarrow:before, .owl-carousel .owl-nav button.owl-prev::before {
+    content: '\003C';
+}
+
+.tparrows.tp-rightarrow:before, .owl-carousel .owl-nav button.owl-next::before {
+    content: '\003E';
 }

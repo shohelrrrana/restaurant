@@ -16,7 +16,7 @@
         get_template_part( '/template-parts/front-page/testimonial' );
         get_template_part( '/template-parts/front-page/gallery' );
         get_template_part( '/template-parts/front-page/blog-team' );
-        get_template_part( '/template-parts/front-page/special-menu' );
+        get_template_part( '/template-parts/common/special-menu' );
     ?>
 </div>
 
